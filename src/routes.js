@@ -17,7 +17,12 @@ routes.post("/posts", multer(multerConfig).single("file"), async (req, res) => {
     key,
     url,
   });
-  return res.json(post);
+  if (!req.file) {
+    return res.send("Please upload a file");
+  } else {
+    return;
+    res.json(post);
+  }
 });
 
 routes.delete("/posts/:id", async (req, res) => {
