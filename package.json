@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "serve -s build"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +23,8 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "multer-s3": "^2.10.0",
-    "s3": "^2.0.0"
+    "s3": "^2.0.0",
+    "serve": "^13.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
