@@ -1,13 +1,12 @@
 require("dotenv").config();
+
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
-const app = express();
-
 const cors = require("cors");
 
-app.use(cors());
+const app = express();
 
 /**
  * Database setup
@@ -21,6 +20,7 @@ mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
 });
 
+app.use(cors());
 // Permite ao express lidar com requisições com o corpo de mensagem no formato json.
 app.use(express.json());
 // Permite ao express lidar com requisições no padrão urlencoded. Facilita o envio de arquivos.
